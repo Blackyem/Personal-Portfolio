@@ -1,11 +1,18 @@
 {
   "compilerOptions": {
-    "esModuleInterop": true,
+    "target": "ES2020",                           // ✅ Needed for modern JS (fixes private identifiers error)
+    "module": "ESNext",                           // ✅ Enables modern module resolution (fixes Rollup issue)
+    "moduleResolution": "node",                   // ✅ Required for Node-style resolution
+    "lib": ["DOM", "ESNext"],                     // ✅ JSX & browser features
     "jsx": "react-jsx",
+    "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
+    "skipLibCheck": true,                         // ✅ Prevents type errors from node_modules
+    "strict": true,                               // ✅ Stronger type checking (optional but recommended)
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"]
     }
-  }
+  },
+  "include": ["src"]                              // ✅ Ensures TypeScript only checks your source files
 }
