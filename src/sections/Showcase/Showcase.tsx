@@ -91,7 +91,7 @@ function Showcase() {
         </p>
 
         <a href={OladipupoCV} download>
-          <button className="hover">Resume</button>
+          <button>Resume</button>
         </a>
       </div>
     </section>

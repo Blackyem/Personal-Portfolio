@@ -1,4 +1,4 @@
-import { defineConfig } from "vite"; // ✅ Use 'vite' instead of 'vitest/config' unless ONLY testing
+import { defineConfig } from "vite"; 
 import react from "@vitejs/plugin-react";
 import path from "path";
 
@@ -10,7 +10,7 @@ export default defineConfig({
     },
   },
   build: {
-    target: "esnext", // ✅ Ensure Vite builds for modern JS (matches tsconfig)
-    outDir: "dist",   // ✅ Explicit output directory
+    target: "esnext",
+    outDir: "dist",   
   }
 });
