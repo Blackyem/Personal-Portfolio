@@ -1,6 +1,47 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
 :root {
+  /* Updated color system to match user's existing theme with emerald green */
+  --background: #ffffff;
+  --foreground: #222222;
+  --card: #f9fafb;
+  --card-foreground: #374151;
+  --popover: #ffffff;
+  --popover-foreground: #4b5563;
+  --primary: #10b981;
+  --primary-foreground: #ffffff;
+  --secondary: #f97316;
+  --secondary-foreground: #ffffff;
+  --muted: #f9fafb;
+  --muted-foreground: #374151;
+  --accent: #10b981;
+  --accent-foreground: #ffffff;
+  --destructive: #e53e3e;
+  --destructive-foreground: #ffffff;
+  --border: #888888;
+  --input: #ffffff;
+  --ring: rgba(16, 185, 129, 0.5);
+  --chart-1: #f97316;
+  --chart-2: #10b981;
+  --chart-3: #4b5563;
+  --chart-4: #d97706;
+  --chart-5: #ea580c;
+  --radius: 1.25rem;
+  --sidebar: #f9fafb;
+  --sidebar-foreground: #374151;
+  --sidebar-primary: #10b981;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #f97316;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: #e5e7eb;
+  --sidebar-ring: rgba(16, 185, 129, 0.5);
+
+  /* Added user's existing CSS variables for compatibility */
   --background-color: #fff;
-  --btn-color: #10B981;
+  --btn-color: #10b981;
   --btn-text-color: #fff;
   --project-card-bg: #ffffff00;
   --text-color: #222;
@@ -9,9 +50,45 @@
   --font-main: "Rubik", sans-serif;
 }
 
-[data-theme="dark"] {
+.dark {
+  /* Updated dark theme to match user's existing dark mode */
+  --background: #222222;
+  --foreground: #ffffff;
+  --card: #1e293b;
+  --card-foreground: #e2e8f0;
+  --popover: #1e293b;
+  --popover-foreground: #e2e8f0;
+  --primary: #d1d5db;
+  --primary-foreground: #222222;
+  --secondary: #fb923c;
+  --secondary-foreground: #0f172a;
+  --muted: #334155;
+  --muted-foreground: #94a3b8;
+  --accent: #d1d5db;
+  --accent-foreground: #222222;
+  --destructive: #ef4444;
+  --destructive-foreground: #e2e8f0;
+  --border: #334155;
+  --input: #222222;
+  --ring: rgba(209, 213, 219, 0.5);
+  --chart-1: #fb923c;
+  --chart-2: #d1d5db;
+  --chart-3: #e2e8f0;
+  --chart-4: #f59e0b;
+  --chart-5: #ea580c;
+  --radius: 1.25rem;
+  --sidebar: #1e293b;
+  --sidebar-foreground: #e2e8f0;
+  --sidebar-primary: #d1d5db;
+  --sidebar-primary-foreground: #222222;
+  --sidebar-accent: #334155;
+  --sidebar-accent-foreground: #e2e8f0;
+  --sidebar-border: #334155;
+  --sidebar-ring: rgba(209, 213, 219, 0.5);
+
+  /* Added user's dark theme variables */
   --background-color: #222;
-  --btn-color: #D1D5DB;
+  --btn-color: #d1d5db;
   --btn-text-color: #222;
   --project-card-bg: #fff;
   --text-color: #fff;
@@ -19,61 +96,94 @@
   --footer-text-color: #bbb;
 }
 
-body {
-  background-color: var(--background-color);
-  display: flex;
-  justify-content: center;
-  margin: 0 auto 60px;
-  font-family: var(--font-main);
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
 }
 
-#root {
-  display: flex;
-  flex-direction: column;
-  gap: 60px;
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    /* Added user's body styles */
+    font-family: var(--font-main);
+    display: flex;
+    justify-content: center;
+    margin: 0 auto 60px;
+  }
+
+  /* Added user's typography styles */
+  h1,
+  h2,
+  h3,
+  p {
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+  }
+
+  h1,
+  h2 {
+    text-transform: uppercase;
+  }
+
+  h1 {
+    font-family: var(--font-main);
+    font-size: 32px;
+  }
+
+  h2,
+  h3 {
+    font-family: var(--font-main);
+    font-size: 20px;
+  }
+
+  p {
+    font-family: var(--font-main);
+    font-size: 16px;
+    font-weight: 300;
+  }
 }
 
-h1,
-h2,
-h3,
-p {
-  color: var(--text-color);
-  margin: 0;
-  padding: 0;
-}
-
-h1,
-h2 {
-  text-transform: uppercase;
-}
-
-h1 {
-  font-family: var(--font-main);
-  font-size: 32px;
-}
-
-h2,
-h3 {
-  font-family: var(--font-main);
-  font-size: 20px;
-}
-
-p {
-  font-family: var(--font-main);
-  font-size: 16px;
-  font-weight: 300;
-}
-
-.sectionTitle {
-  margin-bottom: 30px;
-}
-
-.hover {
-  cursor: pointer;
-}
-
-/* --------- FORM STYLES --------- */
-
+/* Added user's existing form styles with enhanced compatibility */
 .container {
   display: flex;
   flex-direction: column;
@@ -94,22 +204,18 @@ input:not([type="submit"]) {
   width: 250px;
   font-family: var(--font-main);
   font-size: 16px;
+  border-radius: 20px;
+  border: var(--border) 1px solid;
+  box-sizing: border-box;
+  justify-self: center;
+  background-color: var(--background-color);
+  color: var(--form-text-color);
 }
 
 textarea {
   padding-top: 16px;
   resize: none;
   height: 250px;
-}
-
-input,
-textarea {
-  border-radius: 20px;
-  border: #888 1px solid;
-  box-sizing: border-box;
-  justify-self: center;
-  background-color: var(--background-color);
-  color: var(--form-text-color);
 }
 
 input::placeholder,
@@ -143,13 +249,77 @@ input[type="submit"]:active {
   transform: translateY(2px);
 }
 
-/* --------- MEDIA QUERIES --------- */
+.sectionTitle {
+  margin-bottom: 30px;
+}
 
-@media (width >= 800px) {
-  #root {
-    gap: 100px;
+.hover {
+  cursor: pointer;
+}
+
+/* Custom animations */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
   }
+  50% {
+    transform: translateY(-10px);
+  }
+}
 
+@keyframes pulse-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(16, 185, 129, 0.6);
+  }
+}
+
+@keyframes whatsapp-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+  }
+}
+
+.whatsapp-pulse {
+  animation: whatsapp-pulse 2s infinite;
+}
+
+@keyframes checkmark {
+  0% {
+    transform: scale(0) rotate(45deg);
+  }
+  50% {
+    transform: scale(1.2) rotate(45deg);
+  }
+  100% {
+    transform: scale(1) rotate(45deg);
+  }
+}
+
+.animate-checkmark {
+  animation: checkmark 0.6s ease-in-out;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Added responsive media queries from user's CSS */
+@media (width >= 800px) {
   h1 {
     font-size: 40px;
   }
@@ -161,6 +331,7 @@ input[type="submit"]:active {
 
   p {
     font-size: 20px;
+    font-weight: 700;
   }
 
   .sectionTitle {
@@ -180,10 +351,6 @@ input[type="submit"]:active {
 }
 
 @media (width >= 1400px) {
-  #root {
-    gap: 200px;
-  }
-
   h1 {
     font-size: 48px;
   }

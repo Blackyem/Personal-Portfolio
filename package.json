@@ -13,12 +13,21 @@
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
     "@formspree/react": "^3.0.0",
+    "@radix-ui/react-slot": "^1.2.3",
+    "class-variance-authority": "^0.7.1",
+    "classnames": "^2.5.1",
+    "cn": "^0.1.1",
     "framer-motion": "^12.19.1",
+    "lucide-react": "^0.543.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-simple-typewriter": "^5.0.1",
     "react-typed": "^2.0.12",
-    "rollup": "^4.44.1"
+    "rollup": "^4.44.1",
+    "tailwind-merge": "^3.3.1",
+    "next": "15.5.3",
+    "clsx": "2.1.1",
+    "tailwindcss-animate": "1.0.7"
   },
   "devDependencies": {
     "@eslint/js": "^9.22.0",
@@ -39,6 +48,9 @@
     "typescript": "~5.7.2",
     "typescript-eslint": "^8.26.1",
     "vite": "^6.3.5",
-    "vitest": "^3.2.4"
+    "vitest": "^3.2.4",
+    "tailwindcss": "^3.4.17",
+    "postcss": "^8.4.35",
+    "autoprefixer": "^10.4.17"
   }
 }
