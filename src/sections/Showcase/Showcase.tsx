@@ -10,7 +10,7 @@ import twitterLight from "@/assets/twitter-light.svg";
 import twitterDark from "@/assets/twitter-dark.svg";
 import linkedinLight from "@/assets/linkedin-light.svg";
 import linkedinDark from "@/assets/linkedin-dark.svg";
-import OladipupoAhmedCV from "@/assets/Oladipupo Ahmed-Cv-Fullstack.pdf";
+import OladipupoAhmedCv from "@/assets/OladipupoAhmed-Cv-Fullstack.pdf"
 import { useTheme } from "@/BrightFrame/ThemeContext";
 import { Typewriter } from "react-simple-typewriter";
 
@@ -90,8 +90,8 @@ function Showcase() {
           Full-stack developer specializing in responsive, high-performance websites and applications from custom business sites to e-commerce platforms. I deliver clean, scalable code and user-friendly designs that bring ideas to life.
         </p>
 
-        <a href={OladipupoAhmedCV} download>
-          <button>Resume</button>
+        <a href={OladipupoAhmedCv} download>
+          <button className="hover">Resume</button>
         </a>
       </div>
     </section>

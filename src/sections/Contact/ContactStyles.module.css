@@ -108,3 +108,10 @@ input[type="submit"]:active {
     gap: 40px;
   }
 }
+
+.success {
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 1.2rem;
+  color: #4ade80;
+}
