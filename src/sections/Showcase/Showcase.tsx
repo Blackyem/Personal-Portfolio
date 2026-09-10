@@ -10,7 +10,7 @@ import twitterLight from "@/assets/twitter-light.svg";
 import twitterDark from "@/assets/twitter-dark.svg";
 import linkedinLight from "@/assets/linkedin-light.svg";
 import linkedinDark from "@/assets/linkedin-dark.svg";
-import OladipupoAhmedCv from "@/assets/OladipupoAhmed-Cv-Fullstack.pdf"
+import OladipupoAhmedCv from "@/assets/OladipupoAhmed-Cv-FrontendDev.pdf"
 import { useTheme } from "@/BrightFrame/ThemeContext";
 import { Typewriter } from "react-simple-typewriter";
 
@@ -92,7 +92,7 @@ function Showcase() {
           Frontend developer specializing in responsive, high-performance websites and applications from custom business sites to e-commerce platforms. I deliver clean, scalable code and user-friendly designs that bring ideas to life.
         </p>
 
-        <a href={OladipupoAhmedCv} download>
+        <a href={OladipupoAhmedCv} download="Oladipupo-Ahmed-Frontend-CV.pdf">
           <button className="hover">Resume</button>
         </a>
       </div>
