@@ -54,12 +54,14 @@ function Showcase() {
     textAlign: "left",
     minHeight: "1.2em",       
     display: "inline-block",  
-    whiteSpace: "nowrap",    
+    whiteSpace: "normal",
+    overflowWrap: "break-word",
+    maxWidth: "100%",
   }}
 >
   <Typewriter
     words={[
-      "Full-Stack Web Developer",
+      "Frontend Web Developer",
       "E-Commerce Solution Builder",
       "Responsive Web Specialist",
       "Performance-Driven Engineer",
@@ -87,7 +89,7 @@ function Showcase() {
         </span>
 
         <p className={styles.description}>
-          Full-stack developer specializing in responsive, high-performance websites and applications from custom business sites to e-commerce platforms. I deliver clean, scalable code and user-friendly designs that bring ideas to life.
+          Frontend developer specializing in responsive, high-performance websites and applications from custom business sites to e-commerce platforms. I deliver clean, scalable code and user-friendly designs that bring ideas to life.
         </p>
 
         <a href={OladipupoAhmedCv} download>

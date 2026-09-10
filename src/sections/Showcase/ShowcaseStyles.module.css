@@ -70,8 +70,8 @@
 
 .colorMode {
   position: absolute;
-  right: -50px;
-  top: -25px;
+  right: 0;
+  top: -10px;
   width: 25px;
   cursor: pointer;
 }
@@ -101,6 +101,11 @@
     flex-direction: row-reverse;
     align-items: center;
     justify-content: space-evenly;
+  }
+
+  .colorMode {
+    right: -50px;
+    top: -25px;
   }
 
   .container .showcase {
