@@ -1,7 +1,92 @@
-.container {
-    text-align: center;
-    p {
-        font-size: 16px;
-        color: var(--footer-text-color);
-    }
- }
+.footer {
+  background-color: var(--dark);
+  color: #ffffff;
+  padding: 48px 0 28px;
+}
+
+.top {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  padding-bottom: 28px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.logo {
+  font-family: var(--font-heading);
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  color: #ffffff;
+}
+
+.logo span {
+  color: var(--green);
+}
+
+.brand p {
+  margin-top: 10px;
+  max-width: 34ch;
+  color: var(--dark-muted);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 26px;
+}
+
+.nav a {
+  color: #c6cfca;
+  font-size: 14.5px;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.nav a:hover {
+  color: #ffffff;
+}
+
+.socials {
+  display: flex;
+  gap: 16px;
+}
+
+.socials a {
+  color: #c6cfca;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.socials a:hover {
+  color: var(--green);
+  transform: translateY(-2px);
+}
+
+.bottom {
+  padding-top: 22px;
+}
+
+.bottom p {
+  color: var(--dark-muted);
+  font-size: 13.5px;
+}
+
+@media (min-width: 900px) {
+  .top {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 40px;
+  }
+
+  .nav {
+    flex: 1;
+    justify-content: center;
+  }
+
+  .footer {
+    padding: 56px 0 30px;
+  }
+}

@@ -1,100 +1,125 @@
+import styles from "./ShowcaseStyles.module.css";
+import profile from "@/assets/BlackyemIMG2.png";
+import cv from "@/assets/OladipupoAhmed-Cv-FrontendDev.pdf";
+import { TechIcon, type TechName } from "@/BrightFrame/TechIcon";
+import { GithubIcon, LinkedinIcon, XIcon } from "@/BrightFrame/Icons";
+import { ArrowRight, Download } from "lucide-react";
 
-
-import styles from "@/sections/Showcase/ShowcaseStyles.module.css";
-import BlackyemIMG2 from "@/assets/BlackyemIMG2.png";
-import sun from "@/assets/sun.svg";
-import moon from "@/assets/moon.svg";
-import githubLight from "@/assets/github-light.svg";
-import githubDark from "@/assets/github-dark.svg";
-import twitterLight from "@/assets/twitter-light.svg";
-import twitterDark from "@/assets/twitter-dark.svg";
-import linkedinLight from "@/assets/linkedin-light.svg";
-import linkedinDark from "@/assets/linkedin-dark.svg";
-import OladipupoAhmedCv from "@/assets/OladipupoAhmed-Cv-FrontendDev.pdf"
-import { useTheme } from "@/BrightFrame/ThemeContext";
-import { Typewriter } from "react-simple-typewriter";
-
-
-
-
+const TECH: { name: TechName; label: string }[] = [
+  { name: "react", label: "React" },
+  { name: "typescript", label: "TypeScript" },
+  { name: "javascript", label: "JavaScript" },
+  { name: "node", label: "Node.js" },
+  { name: "mui", label: "MUI" },
+];
 
 function Showcase() {
-  const { theme, toggleTheme } = useTheme();
-
-  const themeIcon = theme === "light" ? sun : moon;
-  const twitterIcon = theme === "light" ? twitterLight : twitterDark;
-  const githubIcon = theme === "light" ? githubLight : githubDark;
-  const linkdinIcon = theme === "light" ? linkedinLight : linkedinDark;
-
   return (
-    
-    <section id="showcase" className={styles.container}>
-      <div className={styles.colorModeContainer}>
-        <img className={styles.showcase} src={BlackyemIMG2} alt="Profile picture" />
-        <img className={styles.colorMode} src={themeIcon} alt="Color mode icon" onClick={toggleTheme} />
+    <section id="showcase" className={styles.section}>
+      <div className={`container ${styles.grid}`}>
+        <div className={styles.content}>
+          <span className="pill">Frontend Developer</span>
+
+          <h1 className={styles.title}>
+            Hi, I&apos;m Ahmed
+            <br />
+            Opeyemi <span className={styles.accent}>Oladipupo</span>
+          </h1>
+
+          <p className={styles.tagline}>
+            Building fast, responsive and user-focused web applications.
+          </p>
+
+          <p className={styles.description}>
+            I specialize in creating modern web experiences using React,
+            TypeScript, JavaScript and other modern technologies — from business
+            websites to interactive applications.
+          </p>
+
+          <div className={styles.actions}>
+            <a href="#projects" className="btn btnPrimary">
+              View My Projects
+              <ArrowRight size={17} />
+            </a>
+            <a
+              href={cv}
+              download="Oladipupo-Ahmed-Frontend-CV.pdf"
+              className="btn btnOutline"
+            >
+              Download Resume
+              <Download size={17} />
+            </a>
+          </div>
+
+          <div className={styles.socials}>
+            <a
+              href="https://github.com/Blackyem"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub"
+            >
+              <GithubIcon size={22} />
+            </a>
+            <a
+              href="https://www.linkedin.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+            >
+              <LinkedinIcon size={22} />
+            </a>
+            <a
+              href="https://twitter.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="X"
+            >
+              <XIcon size={20} />
+            </a>
+          </div>
+        </div>
+
+        <div className={styles.visual}>
+          <span className={styles.blob} aria-hidden="true" />
+          <span className={styles.dots} aria-hidden="true" />
+          <img
+            className={styles.portrait}
+            src={profile}
+            alt="Ahmed Opeyemi Oladipupo"
+          />
+          <div className={styles.note} aria-hidden="true">
+            <span>
+              Let&apos;s build
+              <br />
+              something great!
+            </span>
+            <svg viewBox="0 0 120 18" className={styles.squiggle}>
+              <path
+                d="M3 12c14-7 28-7 42 0"
+                fill="none"
+                stroke="#00a651"
+                strokeWidth="2.4"
+                strokeLinecap="round"
+              />
+              <path
+                d="M68 12c14-7 28-7 42 0"
+                fill="none"
+                stroke="#00a651"
+                strokeWidth="2.4"
+                strokeLinecap="round"
+              />
+            </svg>
+          </div>
+        </div>
       </div>
 
-      <div className={styles.info}>
-        <h1>
-          Ahmed
-          <br />
-          Opeyemi
-          <br />
-          Oladipupo
-        </h1>
-
-<span
-  style={{
-    fontSize: "0.9rem",
-    fontWeight: 600,
-    fontStyle: "italic",
-    color: "#10B981",
-    letterSpacing: "0.5px",
-    marginTop: "1rem",
-    textAlign: "left",
-    minHeight: "1.2em",       
-    display: "inline-block",  
-    whiteSpace: "normal",
-    overflowWrap: "break-word",
-    maxWidth: "100%",
-  }}
->
-  <Typewriter
-    words={[
-      "Frontend Web Developer",
-      "E-Commerce Solution Builder",
-      "Responsive Web Specialist",
-      "Performance-Driven Engineer",
-    ]}
-    loop={0}
-    cursor={false}   
-    typeSpeed={50}
-    deleteSpeed={60}
-    delaySpeed={3000}
-  />
-</span>
-
-
-
-        <span>
-          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-            <img src={twitterIcon} alt="Twitter icon" />
-          </a>
-          <a href="https://github.com" target="_blank" rel="noopener noreferrer">
-            <img src={githubIcon} alt="Github icon" />
-          </a>
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-            <img src={linkdinIcon} alt="LinkedIn icon" />
-          </a>
-        </span>
-
-        <p className={styles.description}>
-          Frontend developer specializing in responsive, high-performance websites and applications from custom business sites to e-commerce platforms. I deliver clean, scalable code and user-friendly designs that bring ideas to life.
-        </p>
-
-        <a href={OladipupoAhmedCv} download="Oladipupo-Ahmed-Frontend-CV.pdf">
-          <button className="hover">Resume</button>
-        </a>
+      <div className={`container ${styles.techBar}`}>
+        {TECH.map((tech) => (
+          <div key={tech.name} className={styles.techItem}>
+            <TechIcon name={tech.name} size={26} />
+            <span>{tech.label}</span>
+          </div>
+        ))}
       </div>
     </section>
   );

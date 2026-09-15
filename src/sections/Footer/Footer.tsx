@@ -1,15 +1,61 @@
-import styles from "@/sections/Footer/FooterStyles.module.css";
+import { GithubIcon, LinkedinIcon, XIcon } from "@/BrightFrame/Icons";
+import styles from "./FooterStyles.module.css";
 
+const NAV_LINKS = [
+  { label: "Home", href: "#showcase" },
+  { label: "About", href: "#about" },
+  { label: "Skills", href: "#skills" },
+  { label: "Projects", href: "#projects" },
+  { label: "Contact", href: "#contact" },
+];
+
+const SOCIALS = [
+  { label: "GitHub", href: "https://github.com/Blackyem", Icon: GithubIcon },
+  { label: "LinkedIn", href: "https://www.linkedin.com", Icon: LinkedinIcon },
+  { label: "X", href: "https://twitter.com", Icon: XIcon },
+];
 
 function Footer() {
   return (
-    <section id="footer" className={styles.container}>
-      <p>
-        &copy; 2025 Oladipupo Ahmed Opeyemi. <br />
-        All rights reserved. <br />
-      </p>
-    </section>
-  )
+    <footer id="footer" className={styles.footer}>
+      <div className="container">
+        <div className={styles.top}>
+          <div className={styles.brand}>
+            <span className={styles.logo}>
+              AHMED <span>OPEYEMI</span>
+            </span>
+            <p>Frontend Developer building modern web experiences.</p>
+          </div>
+
+          <nav className={styles.nav}>
+            {NAV_LINKS.map((link) => (
+              <a key={link.href} href={link.href}>
+                {link.label}
+              </a>
+            ))}
+          </nav>
+
+          <div className={styles.socials}>
+            {SOCIALS.map(({ label, href, Icon }) => (
+              <a
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={label}
+              >
+                <Icon size={21} />
+              </a>
+            ))}
+          </div>
+        </div>
+
+        <div className={styles.bottom}>
+          <p>© 2025 Ahmed Opeyemi Oladipupo. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  );
 }
 
-export default Footer
+export default Footer;
