@@ -1,14 +1,39 @@
 import { useState, type FormEvent } from "react";
 import { useForm, ValidationError } from "@formspree/react";
-import { ArrowRight, CheckCircle2, Mail, MapPin, Share2 } from "lucide-react";
-import { GithubIcon, LinkedinIcon, XIcon } from "@/BrightFrame/Icons";
+import {
+  ArrowRight,
+  CheckCircle2,
+  Mail,
+  MapPin,
+  Phone,
+  Share2,
+} from "lucide-react";
+import {
+  GithubIcon,
+  LinkedinIcon,
+  WhatsAppIcon,
+  XIcon,
+} from "@/BrightFrame/Icons";
 import styles from "./ContactStyles.module.css";
 
 const SOCIALS = [
   { label: "GitHub", href: "https://github.com/Blackyem", Icon: GithubIcon },
-  { label: "LinkedIn", href: "https://www.linkedin.com", Icon: LinkedinIcon },
-  { label: "X", href: "https://twitter.com", Icon: XIcon },
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/ahmed-oladipupo",
+    Icon: LinkedinIcon,
+  },
+  { label: "X", href: "https://x.com/Blackyem1", Icon: XIcon },
 ];
+
+const PHONE_NUMBER = "+2347036302496";
+const PHONE_DISPLAY = "+234 703 630 2496";
+const WHATSAPP_NUMBER = "2347036302496";
+const WHATSAPP_MESSAGE =
+  "Hi Ahmed! I'd like to discuss a project with you.";
+const WHATSAPP_HREF = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
+  WHATSAPP_MESSAGE
+)}`;
 
 function Contact() {
   const [state, handleSubmit] = useForm("xovnrvez");
@@ -118,12 +143,48 @@ function Contact() {
                   <span className={styles.infoLabel}>Email</span>
                   <a
                     className={styles.infoValue}
-                    href="mailto:ahmed@example.com"
+                    href="mailto:kolayem44@gmail.com"
                   >
-                    ahmed@example.com
+                    kolayem44@gmail.com
                   </a>
                 </div>
               </li>
+
+              <li className={styles.infoItem}>
+                <span className={styles.infoIcon}>
+                  <Phone size={18} />
+                </span>
+                <div>
+                  <span className={styles.infoLabel}>Phone</span>
+                  <a className={styles.infoValue} href={`tel:${PHONE_NUMBER}`}>
+                    {PHONE_DISPLAY}
+                  </a>
+                </div>
+              </li>
+
+              <li className={styles.infoItem}>
+                <a
+                  className={`${styles.infoIcon} ${styles.whatsappIcon}`}
+                  href={WHATSAPP_HREF}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Chat with Ahmed on WhatsApp"
+                >
+                  <WhatsAppIcon size={18} />
+                </a>
+                <div>
+                  <span className={styles.infoLabel}>WhatsApp</span>
+                  <a
+                    className={`${styles.infoValue} ${styles.whatsapp}`}
+                    href={WHATSAPP_HREF}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Chat on WhatsApp
+                  </a>
+                </div>
+              </li>
+
 
               <li className={styles.infoItem}>
                 <span className={styles.infoIcon}>
@@ -131,7 +192,7 @@ function Contact() {
                 </span>
                 <div>
                   <span className={styles.infoLabel}>Location</span>
-                  <span className={styles.infoValue}>Nigeria</span>
+                  <span className={styles.infoValue}> Lagos, Nigeria</span>
                 </div>
               </li>
 

@@ -1,5 +1,5 @@
 import styles from "./ShowcaseStyles.module.css";
-import profile from "@/assets/BlackyemIMG2.png";
+import profile from "@/assets/Blackyem.jpeg";
 import cv from "@/assets/OladipupoAhmed-Cv-FrontendDev.pdf";
 import { TechIcon, type TechName } from "@/BrightFrame/TechIcon";
 import { GithubIcon, LinkedinIcon, XIcon } from "@/BrightFrame/Icons";
@@ -61,7 +61,7 @@ function Showcase() {
               <GithubIcon size={22} />
             </a>
             <a
-              href="https://www.linkedin.com"
+              href="https://www.linkedin.com/in/ahmed-oladipupo"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"
@@ -69,7 +69,7 @@ function Showcase() {
               <LinkedinIcon size={22} />
             </a>
             <a
-              href="https://twitter.com"
+              href="https://x.com/Blackyem1"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="X"

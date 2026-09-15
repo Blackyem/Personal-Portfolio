@@ -97,7 +97,7 @@
 }
 
 .error {
-  color: #d92d20;
+  color: #d92d20; 
   font-size: 14px;
 }
 
@@ -139,6 +139,8 @@
   border-radius: 12px;
   background-color: var(--surface);
   color: var(--green);
+  transition: border-color 0.2s ease, transform 0.2s ease,
+    background-color 0.3s ease;
 }
 
 .infoLabel {
@@ -154,10 +156,28 @@
   color: var(--text);
 }
 
+.whatsapp {
+  color: #25d366;
+  font-weight: 600;
+}
+
+.whatsapp:hover {
+  text-decoration: underline;
+}
+
+.whatsappIcon {
+  color: #25d366;
+}
+
+.whatsappIcon:hover {
+  border-color: #25d366;
+  transform: translateY(-1px);
+}
+
 .socials {
   display: flex;
-  gap: 14px;
-  margin-top: 4px;
+  gap: 25px;
+  margin-top: 6px;
 }
 
 .socials a {

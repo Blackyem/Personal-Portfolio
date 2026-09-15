@@ -11,8 +11,12 @@ const NAV_LINKS = [
 
 const SOCIALS = [
   { label: "GitHub", href: "https://github.com/Blackyem", Icon: GithubIcon },
-  { label: "LinkedIn", href: "https://www.linkedin.com", Icon: LinkedinIcon },
-  { label: "X", href: "https://twitter.com", Icon: XIcon },
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/ahmed-oladipupo",
+    Icon: LinkedinIcon,
+  },
+  { label: "X", href: "https://x.com/Blackyem1", Icon: XIcon },
 ];
 
 function Footer() {
